@@ -1,0 +1,71 @@
+[
+  {
+    "name": "OTP activation",
+    "uri": "features/otp.feature",
+    "elements": [
+      {
+        "name": "Valid OTP activates the account",
+        "type": "scenario",
+        "line": 5,
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "a pending patient account",
+            "result": {
+              "status": "passed",
+              "duration": 120000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "the patient enters a valid OTP",
+            "result": {
+              "status": "passed",
+              "duration": 340000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the account status is Active",
+            "result": {
+              "status": "passed",
+              "duration": 90000000
+            }
+          }
+        ]
+      },
+      {
+        "name": "Expired OTP is rejected",
+        "type": "scenario",
+        "line": 12,
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "an OTP sent 6 minutes ago",
+            "result": {
+              "status": "passed",
+              "duration": 100000000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "the patient enters the OTP",
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the error \"OTP expired\" is shown",
+            "result": {
+              "status": "failed",
+              "duration": 5000000000,
+              "error_message": "AssertionError: expected 'Invalid OTP' to equal 'OTP expired'"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

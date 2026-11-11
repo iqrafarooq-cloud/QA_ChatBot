@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="api" tests="3" failures="1" time="2.4">
+  <testsuite name="Users API" tests="3" failures="1">
+    <testcase classname="UsersApi" name="GET /users returns 200" time="0.31"/>
+    <testcase classname="UsersApi" name="POST /users rejects duplicate email" time="0.52">
+      <failure message="expected 409 but got 500">AssertionError: expected 409 but got 500 at users.test.js:42</failure>
+    </testcase>
+    <testcase classname="UsersApi" name="DELETE /users/:id requires admin" time="0.12"><skipped/></testcase>
+  </testsuite>
+</testsuites>

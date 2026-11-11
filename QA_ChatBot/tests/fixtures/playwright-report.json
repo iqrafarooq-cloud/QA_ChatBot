@@ -1,0 +1,168 @@
+{
+  "config": {
+    "version": "1.56.0"
+  },
+  "suites": [
+    {
+      "title": "login.spec.js",
+      "file": "tests/login.spec.js",
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login",
+          "file": "tests/login.spec.js",
+          "specs": [
+            {
+              "title": "valid user can log in",
+              "ok": false,
+              "file": "tests/login.spec.js",
+              "line": 5,
+              "tests": [
+                {
+                  "projectName": "chromium",
+                  "status": "unexpected",
+                  "results": [
+                    {
+                      "status": "failed",
+                      "duration": 30500,
+                      "error": {
+                        "message": "Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)\n\nLocator: locator('.dashboard-title')\nExpected string: \"Welcome\"\nReceived: <element(s) not found>"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "shows error for wrong password",
+              "ok": false,
+              "file": "tests/login.spec.js",
+              "line": 13,
+              "tests": [
+                {
+                  "projectName": "chromium",
+                  "status": "unexpected",
+                  "results": [
+                    {
+                      "status": "failed",
+                      "duration": 6200,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: locator('button') resolved to 3 elements"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "remember me keeps session",
+              "ok": true,
+              "file": "tests/login.spec.js",
+              "line": 20,
+              "tests": [
+                {
+                  "projectName": "chromium",
+                  "status": "expected",
+                  "results": [
+                    {
+                      "status": "passed",
+                      "duration": 2100
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "logout clears session",
+              "ok": true,
+              "file": "tests/login.spec.js",
+              "line": 28,
+              "tests": [
+                {
+                  "projectName": "chromium",
+                  "status": "expected",
+                  "results": [
+                    {
+                      "status": "passed",
+                      "duration": 1800
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "SSO login",
+              "ok": true,
+              "file": "tests/login.spec.js",
+              "line": 36,
+              "tests": [
+                {
+                  "projectName": "chromium",
+                  "status": "skipped",
+                  "results": [
+                    {
+                      "status": "skipped",
+                      "duration": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "checkout.spec.js",
+      "file": "tests/checkout.spec.js",
+      "specs": [
+        {
+          "title": "pay with saved card",
+          "ok": true,
+          "file": "tests/checkout.spec.js",
+          "line": 9,
+          "tests": [
+            {
+              "projectName": "chromium",
+              "status": "flaky",
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 4100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "apply coupon",
+          "ok": false,
+          "file": "tests/checkout.spec.js",
+          "line": 22,
+          "tests": [
+            {
+              "projectName": "chromium",
+              "status": "unexpected",
+              "results": [
+                {
+                  "status": "failed",
+                  "duration": 7300,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: locator('button') resolved to 3 elements"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "duration": 52000,
+    "expected": 2,
+    "unexpected": 3,
+    "flaky": 1,
+    "skipped": 1
+  }
+}
